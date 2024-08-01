@@ -9,11 +9,8 @@ from langchain_community.llms import Ollama
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
-from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
 from sentence_transformers.cross_encoder import CrossEncoder
-from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain.schema import Document
-import random
 
 # Specify the correct path to your documents directory
 DATA_PATH = '../data'
