@@ -295,7 +295,8 @@ def respond_with_sources(query, retriever) -> str:
 if __name__ == '__main__':
     setup_ollama()
 
-    DATA_PATH = '../../processed_cyber_data'
+    DATA_PATH = '../../unprocessed_cyber_data'
+    NEW_DATA_PATH = '../../processed_cyber_data'
     DB_FAISS_PATH = '../vectorstore'
 
     st.header("Welcome to the 📝 Offensive Cyber Assistant")
