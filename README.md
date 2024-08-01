@@ -26,8 +26,8 @@ Instructions on how to set up this project:
    - In VSCode, go to Terminal, then use the command pip install<library> to installl the libraries from the requirements.txt file
 5. Install Llama3
    - In your script, run the following code:
-      # os.system("curl -fsSL https://ollama.com/install.sh | sh")
-        # os.system("export OLLAMA_HOST=localhost:8888")
+        os.system("curl -fsSL https://ollama.com/install.sh | sh")
+        os.system("export OLLAMA_HOST=localhost:8888")
         os.system("sudo service ollama stop")
         cmd = "ollama serve"
         with open(os.devnull, 'wb') as devnull:
