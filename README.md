@@ -20,8 +20,30 @@ The RAG LLM combines up-to-date knowledge with powerful analysis capabilities to
   
 ## Installation
 Instructions on how to set up this project:
+1. Setup GPU instance:
+   - Follow the documentation to set up anaconda and create an EC2 instance and install a Ubuntu virtual machine on it.
+3. Install Langchain framework
+   - In VSCode, go to Terminal, then use the command pip install<library> to installl the libraries from the requirements.txt file
+5. Install Llama3
+   - In your script, run the following code:
+        os.system("curl -fsSL https://ollama.com/install.sh | sh")
+        os.system("export OLLAMA_HOST=localhost:8888")
+        os.system("sudo service ollama stop")
+        cmd = "ollama serve"
+        with open(os.devnull, 'wb') as devnull:
+            process = subprocess.Popen(cmd, shell=True, stdout=devnull, stderr=devnull)
+7. Install WhiteRabbitNeo
+   - Run the following code:
+        os.system("ollama pull jimscard/whiterabbit-neo")
+        llm = Ollama(model="jimscard/whiterabbit-neo")
+        return llm
+9. Install Filezilla on VM
+    - Follow the SOP in the documentation for correct installation.
 
 ## Technologies Used
+![image](https://github.com/user-attachments/assets/38692311-80b4-4ec6-afa3-cd8a505be714)
+These can be installed from our requirements.txt file.
+
 
 ## Contributing
 We welcome contributions to this project! To contribute, please follow these guidelines:
@@ -32,6 +54,7 @@ We welcome contributions to this project! To contribute, please follow these gui
 4. Submit a pull request with a detailed description of your changes.
 
 ## License
+This project is licensed under the Llama3 License. For more details, refer to the LICENSE file in the repository.
 
 ## Authors and Acknowledgments
 This project was developed by the intern team at Everwatch Corporation:
