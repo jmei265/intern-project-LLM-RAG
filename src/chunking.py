@@ -14,8 +14,8 @@ from streamlit_llama3 import format_docs
 
 # Test comment
 
-DATA_PATH = "random machine learning.pdf"
-CHROMA_PATH = "chroma"
+DATA_PATH = "../../processed_cyber_data"
+DB_FAISS_PATH = "../../vectorstore"
 
 def load_documents():
     loader = DirectoryLoader(DATA_PATH, glob="*.md")
@@ -26,12 +26,12 @@ def split_text(documents: List[str]):
     return documents  # Placeholder function, replace with actual text splitting logic
 
 def save_to_chroma(chunks: List[str]):
-    if os.path.exists(CHROMA_PATH):
-        shutil.rmtree(CHROMA_PATH)
+    if os.path.exists(DB_FAISS_PATH):
+        shutil.rmtree(DB_FAISS_PATH)
     
     embeddings = OllamaEmbeddings(model="mxbai-embed-large", show_progress=True)
     document_chunks = [Document(page_content=chunk) for chunk in chunks]
-    db = Chroma.from_documents(document_chunks, embeddings, persist_directory=CHROMA_PATH)
+    db = Chroma.from_documents(document_chunks, embeddings, persist_directory=DB_FAISS_PATH)
     return db
 
 def load_knowledge_base():
