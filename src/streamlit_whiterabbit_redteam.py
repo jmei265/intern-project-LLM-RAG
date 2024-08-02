@@ -31,7 +31,9 @@ loaders = {
     '.ps1': UnstructuredFileLoader,
     '.delphi': UnstructuredFileLoader,
     '.asm': UnstructuredFileLoader,
-    '.TXT': TextLoader
+    '.TXT': TextLoader,
+    '.json': JSONLoader,
+    '.pdf': PyPDFLoader
 }
 
 logging.basicConfig(level=logging.INFO, filename = 'vector_log.log', filemode = 'w', format='%(name)s - %(levelname)s - %(message)s')
@@ -47,6 +49,69 @@ def setup_ollama():
         cmd = "ollama serve"
         with open(os.devnull, 'wb') as devnull:
             process = subprocess.Popen(cmd, shell=True, stdout=devnull, stderr=devnull)
+
+def get_secret(secret_name):
+    """
+    Creates client for secrets manager and gets specified secret and returns it
+
+    Args:
+        secret_name (str): name of secret to be retrieved
+
+    Returns:
+        dict: variables stored under secret object
+    """
+    client = boto3.client('secretsmanager', region_name='us-east-1')
+    response = client.get_secret_value(SecretId=secret_name)
+    secret = json.loads(response['SecretString'])
+    return secret
+
+def download_folder_from_s3(bucket_name, local_folder, s3_client):
+    """
+    Downloads files from S3 bucket and stores into specified directory
+
+    Args:
+        bucket_name (str): S3 bucket
+        local_folder (str): directory to store files in
+        s3_client (Botocore client s3): client to connect to S3 bucket
+    """
+    os.makedirs(local_folder, exist_ok=True)
+    
+    paginator = s3_client.get_paginator('list_objects_v2')
+    for page in paginator.paginate(Bucket=bucket_name):
+        for obj in page.get('Contents', []):
+            s3_path = obj['Key']
+            local_path = os.path.join(local_folder, s3_path)
+            local_dir = os.path.dirname(local_path)
+            os.makedirs(local_dir, exist_ok=True)
+            try:
+                s3_client.download_file(bucket_name, s3_path, local_path)
+                print(f'Successfully downloaded s3://{bucket_name}/{s3_path} to {local_path}')
+            except Exception as e:
+                print(f'Failed to download s3://{bucket_name}/{s3_path} to {local_path}: {e}')
+
+def pull_files(local_folder_download, secret_name):
+    """Gets S3 name and role using secret for bucket and creates a client for the S3 to download all of the files from
+
+    Args:
+        local_folder_download (str): directory to store files to
+        secret_name (str): name of secret for S3
+    """
+    secrets = get_secret(secret_name)
+
+    bucket_name = secrets['bucket_name']
+    role_arn = secrets['role_arn']
+
+    sts_client = boto3.client('sts')
+
+    response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
+    credentials = response['Credentials']
+
+    s3_client = boto3.client('s3',
+                            aws_access_key_id=credentials['AccessKeyId'],
+                            aws_secret_access_key=credentials['SecretAccessKey'],
+                            aws_session_token=credentials['SessionToken'])
+
+    download_folder_from_s3(bucket_name, local_folder_download, s3_client)
 
 def txt_file_rename(directory):
     """

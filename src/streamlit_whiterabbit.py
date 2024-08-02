@@ -12,8 +12,6 @@ from langchain.retrievers.contextual_compression import ContextualCompressionRet
 from sentence_transformers import CrossEncoder
 from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain_community.document_transformers import DoctranPropertyExtractor
-import boto3
-import json
 import logging
 import os
 import pathlib
@@ -33,7 +31,9 @@ loaders = {
     '.ps1': UnstructuredFileLoader,
     '.delphi': UnstructuredFileLoader,
     '.asm': UnstructuredFileLoader,
-    '.TXT': TextLoader
+    '.TXT': TextLoader,
+    '.json': JSONLoader,
+    '.pdf': PyPDFLoader
 }
 
 logging.basicConfig(level=logging.INFO, filename = 'vector_log.log', filemode = 'w', format='%(name)s - %(levelname)s - %(message)s')
