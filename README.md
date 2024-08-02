@@ -14,9 +14,10 @@ By using the RAG LLM, security professionals can:
 The RAG LLM combines up-to-date knowledge with powerful analysis capabilities to support proactive security measures and improve the effectiveness of security assessments.
 
 ## Features
-- List key features of the project
-- Highlight what makes it unique
-- Mention any notable functionalities
+- FAISS VectorStore
+- LLama3 LLM
+- Web-Scraped Data
+- Streamlit User Interface
   
 ## Installation
 Instructions on how to set up this project:
