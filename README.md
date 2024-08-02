@@ -37,7 +37,9 @@ Instructions on how to set up this project:
         os.system("ollama pull jimscard/whiterabbit-neo")
         llm = Ollama(model="jimscard/whiterabbit-neo")
         return llm
-9. Install Filezilla on VM
+8. Install FAISS on VSCode:
+   - Install vector store using conda install, don't use pip because it blocks necessary capabilities which are needed.
+10. Install Filezilla on VM
     - Follow the SOP in the documentation for correct installation.
 
 ## Technologies Used
