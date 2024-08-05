@@ -1,14 +1,20 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
+__main__ - INFO - Chunks created: 34
 numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+__main__ - INFO - Chunks created: 19
+__main__ - INFO - Chunks created: 22
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 20
+__main__ - INFO - Chunks created: 60
 langchain_community.document_loaders.directory - ERROR - Error loading file ../cyber_data/418.c
 __main__ - ERROR - 
 Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 603, in <module>
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 604, in <module>
     create_knowledgeBase(DATA_PATH, DB_FAISS_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 368, in create_knowledgeBase
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 369, in create_knowledgeBase
     documents = load_documents(directory)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 316, in load_documents
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 317, in load_documents
     docs = loader.load()
            ^^^^^^^^^^^^^
   File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
