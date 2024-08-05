@@ -1,18 +1,10 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
-botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
-numexpr.utils - INFO - NumExpr defaulting to 8 threads.
-__main__ - INFO - Chunks created: 5
-__main__ - INFO - Chunks created: 208
-__main__ - INFO - Chunks created: 3072
-__main__ - INFO - Chunks created: 1769
-__main__ - INFO - Chunks created: 19
-__main__ - INFO - Chunks created: 9531
-__main__ - INFO - Chunks created: 20
-__main__ - INFO - Chunks created: 6018
-__main__ - INFO - Chunks created: 60
-__main__ - INFO - Chunks created: 5
-__main__ - INFO - Chunks created: 19
-__main__ - INFO - Chunks created: 3
-langchain_community.document_loaders.directory - ERROR - Error loading file ../cyber_data/418.c
+__main__ - INFO - Chunks created: 5966
+faiss.loader - INFO - Loading faiss with AVX2 support.
+faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
 __main__ - ERROR - 
-Error loading components: 'lxml.etree._ProcessingInstruction' object has no attribute 'is_phrasing'
+Error loading components: Traceback (most recent call last):
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 607, in <module>
+    delete_files('S3InputBucket-RAG')
+TypeError: delete_files() missing 1 required positional argument: 'local_folder'
+

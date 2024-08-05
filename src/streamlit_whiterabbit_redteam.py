@@ -409,15 +409,17 @@ def push_files(local_folder, secret_name):
         secret_name (str): name of secret for S3
     """
     secrets = get_secret(secret_name)
-
+    
     bucket_name = secrets['bucket_name']
     role_arn = secrets['role_arn']
-
+    
+    local_folder = './test'
+    
     sts_client = boto3.client('sts')
-
+    
     response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
     credentials = response['Credentials']
-
+    
     s3_client = boto3.client('s3',
                             aws_access_key_id=credentials['AccessKeyId'],
                             aws_secret_access_key=credentials['SecretAccessKey'],
@@ -433,11 +435,11 @@ def delete_files(secret_name, local_folder):
         secret_name (str): name of secret for old directory
     """
     secrets = get_secret(secret_name)
-
+    
     role_arn = secrets['role_arn']
-
+    
     sts_client = boto3.client('sts')
-
+    
     response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
     credentials = response['Credentials']
     
