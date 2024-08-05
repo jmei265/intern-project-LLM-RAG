@@ -447,8 +447,7 @@ def delete_files(secret_name, local_folder):
                             aws_secret_access_key=credentials['SecretAccessKey'],
                             aws_session_token=credentials['SessionToken'])
     
-    bucket = s3_client.Bucket('your_bucket_name')
-    bucket.objects.delete()
+    s3_client.delete_object(Bucket=bucket_name, Key=credentials['SecretAccessKey'])
     
     shutil.rmtree(local_folder)
 

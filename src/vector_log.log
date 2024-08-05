@@ -1,53 +1,12 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
 __main__ - ERROR - 
 Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 607, in <module>
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 612, in <module>
     delete_files('S3InputBucket-Redteam', DATA_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 446, in delete_files
-    bucket.objects.delete()
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/collection.py", line 555, in batch_action
-    return action(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/action.py", line 134, in __call__
-    for page in parent.pages():
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/collection.py", line 169, in pages
-    for page in pages:
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/paginate.py", line 269, in __iter__
-    response = self._make_request(current_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/paginate.py", line 357, in _make_request
-    return self._method(**current_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 565, in _api_call
-    return self._make_api_call(operation_name, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 1017, in _make_api_call
-    raise error_class(parsed_response, operation_name)
-botocore.exceptions.ClientError: An error occurred (InvalidAccessKeyId) when calling the ListObjects operation: The AWS Access Key Id you provided does not exist in our records.
-
-__main__ - ERROR - 
-Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 607, in <module>
-    delete_files('S3InputBucket-Redteam', DATA_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 446, in delete_files
-    bucket.objects.delete()
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/collection.py", line 555, in batch_action
-    return action(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/action.py", line 134, in __call__
-    for page in parent.pages():
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/collection.py", line 169, in pages
-    for page in pages:
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/paginate.py", line 269, in __iter__
-    response = self._make_request(current_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/paginate.py", line 357, in _make_request
-    return self._method(**current_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 565, in _api_call
-    return self._make_api_call(operation_name, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 1017, in _make_api_call
-    raise error_class(parsed_response, operation_name)
-botocore.exceptions.ClientError: An error occurred (InvalidAccessKeyId) when calling the ListObjects operation: The AWS Access Key Id you provided does not exist in our records.
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 450, in delete_files
+    bucket = s3_client.Bucket('your_bucket_name')
+             ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 918, in __getattr__
+    raise AttributeError(
+AttributeError: 'S3' object has no attribute 'Bucket'
 
