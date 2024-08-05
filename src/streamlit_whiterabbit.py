@@ -20,6 +20,7 @@ import pathlib
 import shutil
 import subprocess
 import traceback
+import xml.etree.ElementTree
 
 # Specified loader for each type of file found in the cyber data directory (so far)
 loaders = {

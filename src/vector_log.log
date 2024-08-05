@@ -1,221 +1,62 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
-botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
-__main__ - INFO - Chunks created: 128
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 7
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 10
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 6
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 6
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 5
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 5
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 3
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 5
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 5
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 4
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 2
-__main__ - INFO - Chunks created: 1
-__main__ - INFO - Chunks created: 1
-faiss.loader - INFO - Loading faiss with AVX2 support.
-faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+langchain_community.document_loaders.directory - ERROR - Error loading file ../cyber_data/418.c
 __main__ - ERROR - 
 Error loading components: Traceback (most recent call last):
   File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 603, in <module>
     create_knowledgeBase(DATA_PATH, DB_FAISS_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 374, in create_knowledgeBase
-    vectorstore = delete_IDs(directory, vectorstore)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 353, in delete_IDs
-    if file_name in val.metadata['id'].split('-')[0]:
-                    ~~~~~~~~~~~~^^^^^^
-KeyError: 'id'
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 368, in create_knowledgeBase
+    documents = load_documents(directory)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 316, in load_documents
+    docs = loader.load()
+           ^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 195, in lazy_load
+    yield from self._lazy_load_file(i, p, pbar)
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 233, in _lazy_load_file
+    raise e
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 223, in _lazy_load_file
+    for subdoc in loader.lazy_load():
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/unstructured.py", line 107, in lazy_load
+    elements = self._get_elements()
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/langchain_community/document_loaders/unstructured.py", line 228, in _get_elements
+    return partition(filename=self.file_path, **self.unstructured_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/auto.py", line 360, in partition
+    elements = partition_html(
+               ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/documents/elements.py", line 593, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/file_utils/filetype.py", line 429, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/file_utils/filetype.py", line 385, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/chunking/dispatch.py", line 74, in wrapper
+    elements = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/html/partition.py", line 103, in partition_html
+    elements = list(
+               ^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/lang.py", line 475, in apply_lang_metadata
+    elements = list(elements)
+               ^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/html/partition.py", line 222, in iter_elements
+    yield from cls(opts)._iter_elements()
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/html/partition.py", line 229, in _iter_elements
+    for e in self._main.iter_elements():
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/html/parser.py", line 360, in iter_elements
+    yield from self._element_from_text_or_tail(block_item.tail or "", q)
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/html/parser.py", line 376, in _element_from_text_or_tail
+    for node in self._iter_text_segments(text, q):
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/unstructured/partition/html/parser.py", line 420, in _iter_text_segments
+    while q and q[0].is_phrasing:
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'lxml.etree._ProcessingInstruction' object has no attribute 'is_phrasing'
 
