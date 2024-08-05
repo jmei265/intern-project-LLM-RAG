@@ -4,7 +4,7 @@ faiss.loader - INFO - Loading faiss with AVX2 support.
 faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
 __main__ - ERROR - 
 Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 609, in <module>
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 607, in <module>
     delete_files('S3InputBucket-RAG')
 TypeError: delete_files() missing 1 required positional argument: 'local_folder'
 

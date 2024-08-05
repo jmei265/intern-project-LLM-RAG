@@ -590,7 +590,7 @@ if __name__=='__main__':
         DB_FAISS_PATH = '../redteam_vectorstore'
         
         # Loads in data using secret stored for accessing S3 bucket
-        pull_files(DATA_PATH, 'S3InputBucket-Redteam')
+        # pull_files(DATA_PATH, 'S3InputBucket-Redteam')
         
         # Creates header for streamlit app and writes to it
         sl.header("Welcome to the 📝 Offensive Cyber Assistant")
@@ -598,13 +598,13 @@ if __name__=='__main__':
         
         try:
                 # Creates vector store using any unprocessed files
-                rename_files_in_directory(DATA_PATH)
-                txt_file_rename(DATA_PATH)
-                create_knowledgeBase(DATA_PATH, DB_FAISS_PATH)
+                # rename_files_in_directory(DATA_PATH)
+                # txt_file_rename(DATA_PATH)
+                # create_knowledgeBase(DATA_PATH, DB_FAISS_PATH)
                 
                 # Pushes processed files to new S3 bucket and deletes files stored in temp directory and old S3 bucket
-                push_files(DATA_PATH, 'S3InputBucket-Redteam-Processed')
-                delete_files('S3InputBucket-RAG')
+                # push_files(DATA_PATH, 'S3InputBucket-Redteam-Processed')
+                delete_files('S3InputBucket-RAG', DATA_PATH)
                 
                 # Loads in vector store, LLM, and prompt
                 knowledge_base = load_knowledgeBase(DB_FAISS_PATH)
