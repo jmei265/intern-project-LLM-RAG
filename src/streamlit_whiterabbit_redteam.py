@@ -443,7 +443,7 @@ def delete_files(secret_name, local_folder):
     credentials = response['Credentials']
     
     s3 = boto3.resource('s3', aws_access_key_id=credentials['AccessKeyId'], aws_secret_access_key=credentials['SecretAccessKey'])
-    bucket = s3.Bucket(bucket_name)
+    bucket = s3.Bucket(bucket_name, credentials['AccessKeyId'])
     bucket.objects.delete()
     
     shutil.rmtree(local_folder)
