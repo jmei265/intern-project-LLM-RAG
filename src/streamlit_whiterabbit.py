@@ -1,6 +1,6 @@
 # Packages used in RAG system
 import streamlit as sl
-from langchain_community.document_loaders import DirectoryLoader, TextLoader, JSONLoader, UnstructuredFileLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, JSONLoader, PyPDFLoader, UnstructuredFileLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.prompts import ChatPromptTemplate
@@ -12,9 +12,12 @@ from langchain.retrievers.contextual_compression import ContextualCompressionRet
 from sentence_transformers import CrossEncoder
 from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain_community.document_transformers import DoctranPropertyExtractor
+import boto3
+import json
 import logging
 import os
 import pathlib
+import shutil
 import subprocess
 
 # Specified loader for each type of file found in the cyber data directory (so far)
@@ -89,11 +92,11 @@ def download_folder_from_s3(bucket_name, local_folder, s3_client):
             except Exception as e:
                 print(f'Failed to download s3://{bucket_name}/{s3_path} to {local_path}: {e}')
 
-def pull_files(local_folder_download, secret_name):
+def pull_files(local_folder, secret_name):
     """Gets S3 name and role using secret for bucket and creates a client for the S3 to download all of the files from
 
     Args:
-        local_folder_download (str): directory to store files to
+        local_folder (str): directory to store files to
         secret_name (str): name of secret for S3
     """
     secrets = get_secret(secret_name)
@@ -111,7 +114,7 @@ def pull_files(local_folder_download, secret_name):
                             aws_secret_access_key=credentials['SecretAccessKey'],
                             aws_session_token=credentials['SessionToken'])
 
-    download_folder_from_s3(bucket_name, local_folder_download, s3_client)
+    download_folder_from_s3(bucket_name, local_folder, s3_client)
 
 
 def txt_file_rename(directory):
@@ -272,6 +275,22 @@ def chunk_numberer(docs):
             num += 1
     return docs
 
+def document_id(docs):
+    """
+    Creates unique ID for each chunk based off document name and number of chunk in document
+
+    Args:
+        docs (List[Document]): list of documents
+
+    Returns:
+        List[Document]: list of documents with IDs added
+    """
+    for doc in docs:
+        source = os.path.basename(doc.metadata['source'])
+        chunk_no = doc.metadata['chunk_no']
+        doc.metadata['id'] = f"{source}-{chunk_no}"
+    return docs
+
 def load_documents(directory):
         """
         Loads in files from ../data directory and returns them
@@ -298,14 +317,50 @@ def load_documents(directory):
                                 if chunks != None and chunks != "" and len(chunks) > 0:
                                         documents.extend(chunks)
         documents = chunk_numberer(documents)
-        return documents
-        # return metadata_extractor(documents)
+        return document_id(documents)
 
-def create_knowledgeBase(directory, vectorstore):
+def get_file_names(directory):
     """
-    Loads in documents, splits into chunks, and vectorizes chunks and stores vectors under FAISS vector store
+    Gets names of all the files in the specified directory
+
+    Args:
+        directory (str): path to directory
+
+    Returns:
+        List[str]: list of names of files in directory
+    """
+    file_names = []
+    for file_name in os.listdir(directory):
+        file_names.append(file_name)
+    return file_names
+
+def delete_IDs(directory, vectorstore):
+    """
+    Deletes all of the documents in pre-existing vectorstore if any of the new documents waiting to be added to the vectorstore share the same name
+
+    Args:
+        directory (str): path to directory
+        vectorstore (FAISS): FAISS vectorstore
+
+    Returns:
+        FAISS: FAISS vectorstore with duplicate documents deleted
+    """
+    IDs = []
+    file_names = get_file_names(directory)
+    for key, val in vectorstore.docstore._dict.items():
+        for file_name in file_names:
+            if file_name in val.metadata['id'].split('-')[0]:
+                IDs.append(key)
+    if len(IDs) > 0:
+        vectorstore.delete(IDs)
+    return vectorstore
+
+def create_knowledgeBase(directory, vector_path):
+    """
+    Loads in processed documents and used embedding models to embed them, either adding the embeddings to a pre-existing vectorstore or initializes a new vectorstore,
+    saving the vectorstore locally
     
-    Parameters:
+    Args:
         directory (str): The input text to be split.
         vectorstore (FAISS): vector store containing vectors of documents
     """
@@ -313,27 +368,97 @@ def create_knowledgeBase(directory, vectorstore):
     os.system("ollama pull mxbai-embed-large")
     embeddings=OllamaEmbeddings(model="mxbai-embed-large", show_progress=True)
     if len(documents) > 0:
-        vectorstore = FAISS.from_documents(documents=documents, embedding=embeddings)
-        if os.path.exists(DB_FAISS_PATH + '/index.faiss'):
-            old_vectorstore = FAISS.load_local(DB_FAISS_PATH, embeddings, allow_dangerous_deserialization=True)
-            old_vectorstore.merge_from(vectorstore)
-            old_vectorstore.save_local(DB_FAISS_PATH)
+        if os.path.exists(vector_path + '/index.faiss'):
+            vectorstore = FAISS.load_local(vector_path, embeddings, allow_dangerous_deserialization=True)
+            vectorstore = delete_IDs(directory, vectorstore)
+            vectorstore.add_documents(documents)
+            vectorstore.save_local(vector_path)
         else:
-            vectorstore.save_local(DB_FAISS_PATH)
+            vectorstore = FAISS.from_documents(documents=documents, embedding=embeddings)
+            vectorstore.save_local(vector_path)
 
-def move_files(directory, new_directory):
+def upload_folder_to_s3(local_folder, bucket_name, s3_client):
     """
-    Moves files from unprocessed data directory to processed data directory
+    Goes through each file in specified directory and uploads it to S3 bucket
+
+    Args:
+        local_folder (str): directory where files are stored
+        bucket_name (str): S3 bucket
+        s3_client (Botocore client s3): client to connect to S3 bucket
+    """
+    for root, dirs, files in os.walk(local_folder):
+        if '.ipynb_checkpoints' in dirs:
+            dirs.remove('.ipynb_checkpoints')
+        
+        for file in files:
+            local_path = os.path.join(root, file)
+            relative_path = os.path.relpath(local_path, local_folder)
+            s3_path = relative_path.replace("\\", "/")
+            try:
+                s3_client.upload_file(local_path, bucket_name, s3_path)
+                print(f'Successfully uploaded {local_path} to s3://{bucket_name}/{s3_path}')
+            except Exception as e:
+                print(f'Failed to upload {local_path} to s3://{bucket_name}/{s3_path}: {e}')
+
+def push_files(local_folder, secret_name):
+    """Gets S3 name and role using secret for bucket and creates a client for the S3 to download all of the files from
+
+    Args:
+        local_folder (str): directory where files are stored
+        secret_name (str): name of secret for S3
+    """
+    secrets = get_secret(secret_name)
+
+    bucket_name = secrets['bucket_name']
+    role_arn = secrets['role_arn']
+
+    sts_client = boto3.client('sts')
+
+    response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
+    credentials = response['Credentials']
+
+    s3_client = boto3.client('s3',
+                            aws_access_key_id=credentials['AccessKeyId'],
+                            aws_secret_access_key=credentials['SecretAccessKey'],
+                            aws_session_token=credentials['SessionToken'])
     
-    Parameters:
-        directory (str): The input text to be split.
-    """
-    file_paths = pathlib.Path(directory).iterdir()
-    for file_path in file_paths:
-        file_name = os.path.basename(file_path)
-        os.replace(file_path, new_directory+file_name)
+    upload_folder_to_s3(local_folder, bucket_name, s3_client)
 
-def load_knowledgeBase():
+def delete_files(secret_name, local_folder):
+    """
+    Deletes files in old S3 buckets and local directory where files are stored
+    
+    Args:
+        secret_name (str): name of secret for old directory
+    """
+    secrets = get_secret(secret_name)
+
+    role_arn = secrets['role_arn']
+
+    sts_client = boto3.client('sts')
+
+    response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
+    credentials = response['Credentials']
+    
+    s3 = boto3.resource('s3', aws_access_key_id=credentials['AccessKeyId'], aws_secret_access_key=credentials['SecretAccessKey'])
+    bucket = s3.Bucket('your_bucket_name')
+    bucket.objects.delete()
+    
+    shutil.rmtree(local_folder)
+
+# def move_files(directory, new_directory):
+#     """
+#     Moves files from unprocessed data directory to processed data directory
+    
+#     Parameters:
+#         directory (str): The input text to be split.
+#     """
+#     file_paths = pathlib.Path(directory).iterdir()
+#     for file_path in file_paths:
+#         file_name = os.path.basename(file_path)
+#         os.replace(file_path, new_directory+file_name)
+
+def load_knowledgeBase(vector_path):
         """
         Loads and returns vector store
 
@@ -342,7 +467,7 @@ def load_knowledgeBase():
         """
         os.system("ollama pull mxbai-embed-large")
         embeddings=OllamaEmbeddings(model="mxbai-embed-large", show_progress=True)
-        db = FAISS.load_local(DB_FAISS_PATH, embeddings, allow_dangerous_deserialization=True)
+        db = FAISS.load_local(vector_path, embeddings, allow_dangerous_deserialization=True)
         return db
         
 def load_llm():
@@ -442,7 +567,7 @@ def respond_with_sources(query, retriever) -> str:
 
     Args:
         query (str): query inputted by user
-        retriever (FAISS_retriver): gets most similar vectors from vector store
+        retriever (FAISS retriever): gets most similar vectors from vector store
 
     Returns:
         str: each source used
@@ -460,24 +585,28 @@ if __name__=='__main__':
         setup_ollama()
         
         # Location of the documents for the vector store and location of the vector store
-        DATA_PATH = '../../unprocessed_cyber_data'
-        NEW_DATA_PATH = '../../processed_cyber_data/'
+        DATA_PATH = '../cyber_data'
         DB_FAISS_PATH = '../vectorstore'
-
+        
+        # Loads in data using secret stored for accessing S3 bucket
+        pull_files(DATA_PATH, 'S3InputBucket-RAG')
         
         # Creates header for streamlit app and writes to it
         sl.header("Welcome to the 📝 Offensive Cyber Assistant")
         sl.write("🤖 You can chat by entering your queries")
         
         try:
-                #Creates vector store using any unprocessed files
+                # Creates vector store using any unprocessed files
                 rename_files_in_directory(DATA_PATH)
                 txt_file_rename(DATA_PATH)
                 create_knowledgeBase(DATA_PATH, DB_FAISS_PATH)
-                move_files(DATA_PATH, NEW_DATA_PATH)
+                
+                # Pushes processed files to new S3 bucket and deletes files stored in temp directory and old S3 bucket
+                push_files(DATA_PATH, 'S3InputBucket-RAG-Processed')
+                delete_files('S3InputBucket-RAG')
                 
                 # Loads in vector store, LLM, and prompt
-                knowledge_base = load_knowledgeBase()
+                knowledge_base = load_knowledgeBase(DB_FAISS_PATH)
                 llm = load_llm()
                 prompt = load_prompt()
                 logger.info("Components loaded successfully.")
