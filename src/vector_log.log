@@ -1,4 +1,5 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
+botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
 __main__ - INFO - Chunks created: 128
 __main__ - INFO - Chunks created: 2
 __main__ - INFO - Chunks created: 2
@@ -207,4 +208,14 @@ __main__ - INFO - Chunks created: 1
 faiss.loader - INFO - Loading faiss with AVX2 support.
 faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
 __main__ - ERROR - 
-Error loading components: 'id'
+Error loading components: Traceback (most recent call last):
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 603, in <module>
+    create_knowledgeBase(DATA_PATH, DB_FAISS_PATH)
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 374, in create_knowledgeBase
+    vectorstore = delete_IDs(directory, vectorstore)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit.py", line 353, in delete_IDs
+    if file_name in val.metadata['id'].split('-')[0]:
+                    ~~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+
