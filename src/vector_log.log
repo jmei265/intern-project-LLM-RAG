@@ -1,9 +1,9 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
 __main__ - ERROR - 
 Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 609, in <module>
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 610, in <module>
     delete_files('S3InputBucket-Redteam', DATA_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 450, in delete_files
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 451, in delete_files
     shutil.rmtree(local_folder)
   File "/home/ubuntu/anaconda3/lib/python3.12/shutil.py", line 759, in rmtree
     _rmtree_safe_fd(stack, onexc)

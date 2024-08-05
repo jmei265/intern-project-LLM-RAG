@@ -409,15 +409,15 @@ def push_files(local_folder, secret_name):
         secret_name (str): name of secret for S3
     """
     secrets = get_secret(secret_name)
-
+    
     bucket_name = secrets['bucket_name']
     role_arn = secrets['role_arn']
-
+    
     sts_client = boto3.client('sts')
-
+    
     response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
     credentials = response['Credentials']
-
+    
     s3_client = boto3.client('s3',
                             aws_access_key_id=credentials['AccessKeyId'],
                             aws_secret_access_key=credentials['SecretAccessKey'],
@@ -433,17 +433,20 @@ def delete_files(secret_name, local_folder):
         secret_name (str): name of secret for old directory
     """
     secrets = get_secret(secret_name)
-
+    
+    bucket_name = secrets['bucket_name']
     role_arn = secrets['role_arn']
-
+    
     sts_client = boto3.client('sts')
-
+    
     response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
     credentials = response['Credentials']
     
-    s3 = boto3.resource('s3', aws_access_key_id=credentials['AccessKeyId'], aws_secret_access_key=credentials['SecretAccessKey'])
-    bucket = s3.Bucket('your_bucket_name')
-    bucket.objects.delete()
+    s3_client = boto3.resource('s3', aws_access_key_id=credentials['AccessKeyId'],
+                            aws_secret_access_key=credentials['SecretAccessKey'],
+                            aws_session_token=credentials['SessionToken'])
+    bucket = s3_client.Bucket(bucket_name)
+    bucket.objects.all().delete()
     
     shutil.rmtree(local_folder)
 
@@ -553,7 +556,7 @@ def format_docs(docs):
 def load_compressor():
         """
         Creates and returns contextual compressor using LLM which reduces size of documents from vector store
-
+        
         Returns:
             LLMChainExtractor: contextual compressor
         """
@@ -565,11 +568,11 @@ def load_compressor():
 def respond_with_sources(query, retriever) -> str:
     """
     Pulls and returns the sources of all the documents used in the query
-
+    
     Args:
         query (str): query inputted by user
         retriever (FAISS retriever): gets most similar vectors from vector store
-
+    
     Returns:
         str: each source used
     """
