@@ -19,6 +19,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import traceback
 
 # Specified loader for each type of file found in the cyber data directory (so far)
 loaders = {
@@ -591,7 +592,7 @@ if __name__=='__main__':
         # Loads in data using secret stored for accessing S3 bucket
         pull_files(DATA_PATH, 'S3InputBucket-RAG')
         
-        # Creates header for streamlit app and writes to it
+        # Creates header for Streamlit app and writes to it
         sl.header("Welcome to the 📝 Offensive Cyber Assistant")
         sl.write("🤖 You can chat by entering your queries")
         
@@ -632,10 +633,10 @@ if __name__=='__main__':
                                 | StrOutputParser()
                             )
                         
-                        # Calls chain and writes response to streamlit
+                        # Calls chain and writes response to Streamlit
                         response=rag_chain.invoke(query) + respond_with_sources(query, retriever)
                         sl.write(response)
         
         except Exception as e:
-            logger.error(f"\nError loading components: {e}")
+            logger.error(f"\nError loading components: {traceback.format_exc()}")
             sl.write("An error occurred while loading the components. Please check the logs.")

