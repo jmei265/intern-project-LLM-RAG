@@ -3,25 +3,14 @@ __main__ - ERROR -
 Error loading components: Traceback (most recent call last):
   File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 608, in <module>
     delete_files('S3InputBucket-Redteam', DATA_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 447, in delete_files
-    bucket.objects.delete()
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/collection.py", line 555, in batch_action
-    return action(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/action.py", line 134, in __call__
-    for page in parent.pages():
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/collection.py", line 169, in pages
-    for page in pages:
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/paginate.py", line 269, in __iter__
-    response = self._make_request(current_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/paginate.py", line 357, in _make_request
-    return self._method(**current_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 565, in _api_call
-    return self._make_api_call(operation_name, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 1017, in _make_api_call
-    raise error_class(parsed_response, operation_name)
-botocore.exceptions.ClientError: An error occurred (InvalidAccessKeyId) when calling the ListObjects operation: The AWS Access Key Id you provided does not exist in our records.
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 446, in delete_files
+    bucket = s3.Bucket(bucket_name, credentials['AccessKeyId'])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/factory.py", line 528, in create_resource
+    return partial(
+           ^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/base.py", line 107, in __init__
+    setattr(self, '_' + self.meta.identifiers[i], value)
+                        ~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
 
