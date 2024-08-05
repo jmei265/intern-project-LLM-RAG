@@ -1,0 +1,1 @@
+Request failed: 404 Client Error: Not Found for url: https://attack.mitre.org/techniques/T1479/
