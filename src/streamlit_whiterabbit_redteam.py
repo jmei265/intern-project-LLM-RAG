@@ -19,6 +19,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import traceback
 
 # Specified loader for each type of file found in the cyber data directory (so far)
 loaders = {
@@ -637,5 +638,5 @@ if __name__=='__main__':
                         sl.write(response)
         
         except Exception as e:
-            logger.error(f"\nError loading components: {e}")
+            logger.error(f"\nError loading components: {traceback.format_exc()}")
             sl.write("An error occurred while loading the components. Please check the logs.")
