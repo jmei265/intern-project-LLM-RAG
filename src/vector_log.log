@@ -1,12 +1,4 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
-__main__ - ERROR - 
-Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 612, in <module>
-    delete_files('S3InputBucket-Redteam', DATA_PATH)
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 450, in delete_files
-    bucket = s3_client.Bucket('your_bucket_name')
-             ^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 918, in __getattr__
-    raise AttributeError(
-AttributeError: 'S3' object has no attribute 'Bucket'
-
+faiss.loader - INFO - Loading faiss with AVX2 support.
+faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+__main__ - INFO - Components loaded successfully.
