@@ -413,8 +413,6 @@ def push_files(local_folder, secret_name):
     bucket_name = secrets['bucket_name']
     role_arn = secrets['role_arn']
     
-    local_folder = './test'
-    
     sts_client = boto3.client('sts')
     
     response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
@@ -555,7 +553,7 @@ def format_docs(docs):
 def load_compressor():
         """
         Creates and returns contextual compressor using LLM which reduces size of documents from vector store
-
+        
         Returns:
             LLMChainExtractor: contextual compressor
         """
@@ -567,11 +565,11 @@ def load_compressor():
 def respond_with_sources(query, retriever) -> str:
     """
     Pulls and returns the sources of all the documents used in the query
-
+    
     Args:
         query (str): query inputted by user
         retriever (FAISS retriever): gets most similar vectors from vector store
-
+    
     Returns:
         str: each source used
     """
