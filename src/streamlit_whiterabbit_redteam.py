@@ -604,7 +604,7 @@ if __name__=='__main__':
                 
                 # Pushes processed files to new S3 bucket and deletes files stored in temp directory and old S3 bucket
                 # push_files(DATA_PATH, 'S3InputBucket-Redteam-Processed')
-                delete_files('S3InputBucket-RAG', DATA_PATH)
+                delete_files('S3InputBucket-Redteam', DATA_PATH)
                 
                 # Loads in vector store, LLM, and prompt
                 knowledge_base = load_knowledgeBase(DB_FAISS_PATH)
