@@ -14,9 +14,10 @@ By using the RAG LLM, security professionals can:
 The RAG LLM combines up-to-date knowledge with powerful analysis capabilities to support proactive security measures and improve the effectiveness of security assessments.
 
 ## Features
-- List key features of the project
-- Highlight what makes it unique
-- Mention any notable functionalities
+- FAISS VectorStore
+- LLama3 LLM
+- Web-Scraped Data
+- Streamlit User Interface
   
 ## Installation
 Instructions on how to set up this project:
@@ -37,13 +38,32 @@ Instructions on how to set up this project:
         os.system("ollama pull jimscard/whiterabbit-neo")
         llm = Ollama(model="jimscard/whiterabbit-neo")
         return llm
-9. Install Filezilla on VM
+8. Install FAISS on VSCode:
+   - Install vector store using conda install, don't use pip because it blocks necessary capabilities which are needed.
+10. Install Filezilla on VM
     - Follow the SOP in the documentation for correct installation.
 
 ## Technologies Used
-![image](https://github.com/user-attachments/assets/38692311-80b4-4ec6-afa3-cd8a505be714)
 These can be installed from our requirements.txt file.
-
+```python
+import streamlit as sl
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, JSONLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.llms import Ollama
+from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
+from sentence_transformers import CrossEncoder
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_community.document_transformers import DoctranPropertyExtractor
+import logging
+import os
+import pathlib
+import subprocess
+```
 
 ## Contributing
 We welcome contributions to this project! To contribute, please follow these guidelines:
