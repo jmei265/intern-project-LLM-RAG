@@ -434,6 +434,7 @@ def delete_files(secret_name, local_folder):
     """
     secrets = get_secret(secret_name)
     
+    bucket_name = secrets['bucket_name']
     role_arn = secrets['role_arn']
     
     sts_client = boto3.client('sts')
@@ -441,8 +442,12 @@ def delete_files(secret_name, local_folder):
     response = sts_client.assume_role(RoleArn=role_arn, RoleSessionName='AssumeRoleSession')
     credentials = response['Credentials']
     
-    s3 = boto3.resource('s3', aws_access_key_id=credentials['AccessKeyId'], aws_secret_access_key=credentials['SecretAccessKey'])
-    bucket = s3.Bucket('your_bucket_name')
+    s3_client = boto3.client('s3',
+                            aws_access_key_id=credentials['AccessKeyId'],
+                            aws_secret_access_key=credentials['SecretAccessKey'],
+                            aws_session_token=credentials['SessionToken'])
+    
+    bucket = s3_client.Bucket('your_bucket_name')
     bucket.objects.delete()
     
     shutil.rmtree(local_folder)
