@@ -44,9 +44,26 @@ Instructions on how to set up this project:
     - Follow the SOP in the documentation for correct installation.
 
 ## Technologies Used
-![image](https://github.com/user-attachments/assets/38692311-80b4-4ec6-afa3-cd8a505be714)
 These can be installed from our requirements.txt file.
-
+```python
+import streamlit as sl
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, JSONLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.llms import Ollama
+from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
+from sentence_transformers import CrossEncoder
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_community.document_transformers import DoctranPropertyExtractor
+import logging
+import os
+import pathlib
+import subprocess
+```
 
 ## Contributing
 We welcome contributions to this project! To contribute, please follow these guidelines:
