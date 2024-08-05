@@ -1,16 +1,20 @@
 botocore.credentials - INFO - Found credentials from IAM Role: GPUInstance1
 __main__ - ERROR - 
 Error loading components: Traceback (most recent call last):
-  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 608, in <module>
+  File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 607, in <module>
     delete_files('S3InputBucket-Redteam', DATA_PATH)
   File "/home/ubuntu/intern-project-LLM-RAG/src/streamlit_whiterabbit_redteam.py", line 446, in delete_files
-    bucket = s3.Bucket(bucket_name, credentials['AccessKeyId'])
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/factory.py", line 528, in create_resource
-    return partial(
-           ^^^^^^^^
-  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/base.py", line 107, in __init__
-    setattr(self, '_' + self.meta.identifiers[i], value)
-                        ~~~~~~~~~~~~~~~~~~~~~^^^
-IndexError: list index out of range
+    s3.Object(bucket_name, credentials['AccessKeyId']).delete()
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/factory.py", line 581, in do_action
+    response = action(self, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/boto3/resources/action.py", line 88, in __call__
+    response = getattr(parent.meta.client, operation_name)(*args, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 565, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/anaconda3/lib/python3.12/site-packages/botocore/client.py", line 1017, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (InvalidAccessKeyId) when calling the DeleteObject operation: The AWS Access Key Id you provided does not exist in our records.
 
