@@ -14,8 +14,9 @@ By using the RAG LLM, security professionals can:
 The RAG LLM combines up-to-date knowledge with powerful analysis capabilities to support proactive security measures and improve the effectiveness of security assessments.
 
 ## Features
-- FAISS VectorStore
-- LLama3 LLM
+- FAISS VectorStore (https://python.langchain.com/v0.2/docs/integrations/vectorstores/faiss/)
+- LLama3 LLM (https://ollama.com/library/llama3:8b)
+- WhiteRabbitNeo LLM (https://ollama.com/jimscard/whiterabbit-neo:13b)
 - Web-Scraped Data
 - Streamlit User Interface
   
@@ -25,7 +26,7 @@ Instructions on how to set up this project:
    - Follow the documentation to set up anaconda and create an EC2 instance and install a Ubuntu virtual machine on it.
 3. Install Langchain framework
    - In VSCode, go to Terminal, then use the command pip install<library> to install the libraries from the requirements.txt file
-5. Install Llama3
+5. Installing and running Ollama
    - In your script, run the following code:
         os.system("curl -fsSL https://ollama.com/install.sh | sh")
         os.system("export OLLAMA_HOST=localhost:8888")
@@ -33,13 +34,15 @@ Instructions on how to set up this project:
         cmd = "ollama serve"
         with open(os.devnull, 'wb') as devnull:
             process = subprocess.Popen(cmd, shell=True, stdout=devnull, stderr=devnull)
-7. Install WhiteRabbitNeo
+7. Installing and running WhiteRabbitNeo
    - Run the following code:
         os.system("ollama pull jimscard/whiterabbit-neo")
         llm = Ollama(model="jimscard/whiterabbit-neo")
         return llm
 8. Install FAISS on VSCode:
-   - Install vector store using conda install conda-forge::faiss, don't use pip because it blocks necessary capabilities which are needed.
+   - Install vector store using the following code:
+         conda install conda-forge::faiss
+   - Don't use pip because it blocks necessary capabilities which are needed.
 10. Install Filezilla on VM
     - Follow the SOP in the documentation for correct installation.
 
@@ -47,7 +50,7 @@ Instructions on how to set up this project:
 These can be installed from our requirements.txt file.
 ```python
 import streamlit as sl
-from langchain_community.document_loaders import DirectoryLoader, TextLoader, JSONLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, JSONLoader, UnstructuredFileLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.prompts import ChatPromptTemplate
