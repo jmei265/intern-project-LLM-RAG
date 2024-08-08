@@ -24,7 +24,7 @@ Instructions on how to set up this project:
 1. Setup GPU instance:
    - Follow the documentation to set up anaconda and create an EC2 instance and install a Ubuntu virtual machine on it.
 3. Install Langchain framework
-   - In VSCode, go to Terminal, then use the command pip install<library> to installl the libraries from the requirements.txt file
+   - In VSCode, go to Terminal, then use the command pip install<library> to install the libraries from the requirements.txt file
 5. Install Llama3
    - In your script, run the following code:
         os.system("curl -fsSL https://ollama.com/install.sh | sh")
