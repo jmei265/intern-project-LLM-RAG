@@ -34,6 +34,7 @@ loaders = {
     '.TXT': TextLoader
 }
 
+# Logger for catching error messages and listing docs used in each query
 logging.basicConfig(level=logging.INFO, filename = 'vector_log.log', filemode = 'w', format='%(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
