@@ -39,7 +39,7 @@ Instructions on how to set up this project:
         llm = Ollama(model="jimscard/whiterabbit-neo")
         return llm
 8. Install FAISS on VSCode:
-   - Install vector store using conda install, don't use pip because it blocks necessary capabilities which are needed.
+   - Install vector store using conda install conda-forge::faiss, don't use pip because it blocks necessary capabilities which are needed.
 10. Install Filezilla on VM
     - Follow the SOP in the documentation for correct installation.
 
